@@ -66,31 +66,31 @@ public class ManHinh1 extends AppCompatActivity {
     }
 
     private void showStudentIDDialog() {
-        final String[] studentIDs = {"SV001", "SV002", "SV003", "SV004"};
+        final String[] MaSinhVien = {"SV001", "SV002", "SV003", "SV004"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Chọn Mã Sinh Viên");
-        builder.setItems(studentIDs, new DialogInterface.OnClickListener() {
+        builder.setItems(MaSinhVien, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                binding.etxtmasv.setText(studentIDs[which]);
+                binding.etxtmasv.setText(MaSinhVien[which]);
             }
         });
         builder.show();
     }
 
     private void saveData() {
-        String name = binding.etxttensv.getText().toString();
-        String studentID = binding.etxtmasv.getText().toString();
-        String age = binding.etxttuoi.getText().toString();
-        String gender = binding.rg1.getCheckedRadioButtonId() == R.id.rbnam ? "Nam" : "Nữ";
+        String Ten = binding.etxttensv.getText().toString();
+        String MaSinhVien = binding.etxtmasv.getText().toString();
+        String Tuoi = binding.etxttuoi.getText().toString();
+        String GioiTinh = binding.rg1.getCheckedRadioButtonId() == R.id.rbnam ? "Nam" : "Nữ";
 
-        StringBuilder hobbies = new StringBuilder();
-        if (binding.chbdabong.isChecked()) hobbies.append("Đá bóng ");
-        if (binding.chbchoigame.isChecked()) hobbies.append("Chơi game ");
+        StringBuilder SoThich = new StringBuilder();
+        if (binding.chbdabong.isChecked()) SoThich.append("Đá bóng ");
+        if (binding.chbchoigame.isChecked()) SoThich.append("Chơi game ");
 
-        String result = "Tên: " + name + "\nMã sinh viên: " + studentID + "\nTuổi: " + age +
-                "\nGiới tính: " + gender + "\nSở thích: " + hobbies.toString();
+        String result = "Tên: " + Ten + "\nMã sinh viên: " + MaSinhVien + "\nTuổi: " + Tuoi +
+                "\nGiới tính: " + GioiTinh + "\nSở thích: " + SoThich.toString();
 
-        binding.tvResult.setText(result);
+        binding.txtvHienThi.setText(result);
     }
 }

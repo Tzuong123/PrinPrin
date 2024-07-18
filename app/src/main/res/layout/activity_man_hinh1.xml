@@ -96,7 +96,7 @@
         android:text="Next" />
 
     <TextView
-        android:id="@+id/tvResult"
+        android:id="@+id/txtvHienThi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="16dp"
